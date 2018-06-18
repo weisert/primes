@@ -43,7 +43,10 @@ public class PrimesActivity extends AppCompatActivity {
     }
 
     private void onButtonPressed(Direction direction) {
-        Long userValue = Long.parseLong(editText.getText().toString());
+        String value = editText.getText().toString();
+        if (value.isEmpty())
+          value = "2";
+        long userValue = Long.parseLong(value);
         if (direction == Direction.Up) {
             String info = "Looking for a prime greater than " + userValue;
             infoTextView.setText(info);
